@@ -19,14 +19,17 @@ class Wallet extends React.Component {
     const { expenses } = this.props;
     const totalExpenses = 0;
     if (expenses.length > 0) {
-      const sum = expenses.reduce((acc, curr) => {
-        acc += Number(curr.value) * curr.exchangeRates[curr.currency].ask;
-        return acc;
+      const sum = expenses.reduce((accumulator, currentValue) => {
+        accumulator += Number(currentValue.value) * currentValue.exchangeRates[currentValue.currency].ask;
+        return accumulator;
       }, 0);
       return sum;
     }
     return totalExpenses;
   }
+  /* Consultei o Repositório da Beatriz Ribeiro para fazer a função setTotalExpenses
+  link: https://github.com/tryber/sd-014-b-project-trybewallet/pull/44/commits/39c87475309f8a5cccdbf120dfdff1cab9054713 */
+
 
   render() {
     const { user } = this.props;
