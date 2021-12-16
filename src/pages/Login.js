@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import './StyleLogin.css';
 import { setLoginValue } from '../actions/index';
 
 class Login extends React.Component {
@@ -48,35 +49,38 @@ class Login extends React.Component {
   render() {
     const { email, password, disableButton } = this.state;
     return (
-      <section>
-        <input
-          type="email"
-          id="email"
-          value={ email }
-          onChange={ this.handleChange }
-          placeholder="Digite seu Email"
-          data-testid="email-input"
+      <form>
+        <fieldset className="formLogin">
+          <h4>Trybe Wallet</h4>
+          <input
+            type="email"
+            id="email"
+            value={ email }
+            onChange={ this.handleChange }
+            placeholder="Digite seu Email"
+            data-testid="email-input"
 
-        />
-        <input
-          type="password"
-          id="password"
-          value={ password }
-          onChange={ this.handleChange }
-          placeholder="Digite sua Senha"
-          data-testid="password-input"
-        />
+          />
+          <input
+            type="password"
+            id="password"
+            value={ password }
+            onChange={ this.handleChange }
+            placeholder="Digite sua Senha"
+            data-testid="password-input"
+          />
 
-        <button
-          type="button"
-          disabled={ disableButton }
-          onClick={ this.submitLogin }
-        >
-          Entrar
+          <button
+            type="button"
+            disabled={ disableButton }
+            onClick={ this.submitLogin }
+          >
+            Entrar
 
-        </button>
+          </button>
 
-      </section>
+        </fieldset>
+      </form>
     );
   }
 }
