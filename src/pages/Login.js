@@ -74,6 +74,7 @@ class Login extends React.Component {
             type="button"
             disabled={ disableButton }
             onClick={ this.submitLogin }
+            className="style-button"
           >
             Entrar
 
